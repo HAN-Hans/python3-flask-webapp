@@ -14,7 +14,7 @@ Learning 'Flask Web Development'
 **编辑器：**  sublime text3
 
 ## 目录
- >1.  第1节  欢迎来到 Flask 的世界 
+ >1.  第1节  Flask 框架基本知识
  >2.  第2节  Flask 模板 
  >3.  第3节  Flask 的 Web 
  >4.  第4节  数据库 
