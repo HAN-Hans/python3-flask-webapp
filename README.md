@@ -2,6 +2,7 @@
 Learning 'Flask Web Development'
 
 
-# 这个项目是在网上的教程一步一步的学习下来
+# 学习flask的心得体会
+  这个项目前前后后大概花了一个星期的时间
 
 
