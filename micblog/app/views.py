@@ -188,23 +188,23 @@ def publish(user_id):
         form=form)
 
 
-@app.route('/user/<int:user_id>', default = {'page':1}, methods = ['POST','GET'])
-@app.route('/user/<int:user_id>/page/<int:page>', methods = ['GET','POST'])
-@login_required
-def users(user_id,page):
-    form = AboutMeForm()
-    if user_id != current_user.id:
-        flash('Sorry you can only view your own profile!','error')
-        return redirect('index')
+# @app.route('/user/<int:user_id>', default = {'page':1}, methods = ['POST','GET'])
+# @app.route('/user/<int:user_id>/page/<int:page>', methods = ['GET','POST'])
+# @login_required
+# def users(user_id,page):
+#     form = AboutMeForm()
+#     if user_id != current_user.id:
+#         flash('Sorry you can only view your own profile!','error')
+#         return redirect('index')
     
-    #blogs = user.posts.paginate(page, PER_PAGE, False).items
-    pagination = Post.query.filter_by(user_id = current_user.id).order_by(
-        db.desc(Post.timestamp)).paginete(page, PER_PAGE, False)        
+#     #blogs = user.posts.paginate(page, PER_PAGE, False).items
+#     pagination = Post.query.filter_by(user_id = current_user.id).order_by(
+#         db.desc(Post.timestamp)).paginete(page, PER_PAGE, False)        
     
-    return render_template(
-        'user.html',
-        form = form,
-        pagination = pagination)
+#     return render_template(
+#         'user.html',
+#         form = form,
+#         pagination = pagination)
 
 
 

@@ -23,24 +23,12 @@
 <a href="{{ url_for('publish', user_id=user.id) }}">Want to publish blogs?</a>
 
 <hr />
-{% if pagination %}
-    {% for blog in pagination.items %}
-    <p style="color:#ff6600;">{{ blog.body }}</p>
-    <p style="color:#4c4c4c;">{{ blog.timestamp.strftime("%a, %d %b %Y %H:%M:%S") }}</p>
+{% if blogs | length %}
+    {% for blog in blogs %}
+    <p>{{ blog.body }}</p>
+    <p>{{ blog.timestamp.strftime("%a, %d %b %Y %H:%M:%S") }}</p>
     <hr />
     {% endfor %}
-
-    {% if pagination.has_prev %} {# 分页的前端展示 #}
-    <a href="{{ url_for('users', user_id=current_user.id, page=pagination.prev_num) }}"><< prev</a>
-    {% else %}
-    << None
-    {% endif %} | 
-    {% if pagination.has_next %}
-    <a href="{{ url_for('users', user_id=current_user.id, page=pagination.next_num) }}">next >></a>
-    {% else %}
-    None >>
-    {% endif %}
-
 {% else %}
     <p style="color:blue;">the guy is so lazy.....</p>
 {% endif %}
@@ -59,5 +47,3 @@ function about_me() {
 }
 </script>
 {% endblock %}
-
-
