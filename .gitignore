@@ -5,3 +5,4 @@ venv/
 *.sqlite
 *.db
 migrations/
+*.sqlite-journal
